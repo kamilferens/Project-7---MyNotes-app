@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color1: rgb(231, 231, 231);
+    --color2: rgb(255, 255, 255);
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color1);
+    font-family: "Montserrat", sans-serif;
+}
+
+.menu {
+    width: 100%;
+    padding: 7px 10px;
+    background-image: linear-gradient(
+        to top,
+        rgba(159, 158, 158, 0.323) 0%,
+        var(--color1) 50%
+    );
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icon {
+    height: 30px;
+    padding: 3px 10px;
+    margin: 0 7px 0;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.icon:hover {
+    background-color: #333;
+    color: #ddd;
+}
+
+.note-panel {
+    display: flex;
+    display: none;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    background-color: var(--color2);
+    position: absolute;
+    padding: 15px;
+    width: 400px;
+    min-height: 300px;
+    box-shadow: 0 0 8px rgb(72, 72, 72);
+    border-radius: 8px;
+    /*To jest pod późniejszą animację:*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.note-area {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.note {
+    margin: 40px 20px;
+    width: 240px;
+    background-color: rgb(255, 243, 0);
+    border: 1px solid black;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.note-header .delete-note {
+    background: none;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-note:hover {
+    animation: rotate-center 1.6s ease-in-out both;
+}
+
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.note-body {
+    padding: 20px 15px;
+}
+h2 {
+    text-transform: uppercase;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.label {
+    font-size: 21px;
+}
+
+#category {
+    padding: 2px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    margin-bottom: 10px;
+}
+
+#text {
+    padding: 5px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-family: "Montserrat", sans-serif;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 125px;
+    height: 125px;
+    max-height: 600px;
+}
+
+.error {
+    display: flex;
+    display: none;
+    justify-content: center;
+    width: 100%;
+    margin: 5px auto 10px;
+    color: red;
+    font-weight: 700;
+}
+
+.panel-buttons {
+    margin-top: 5px;
+}
+
+select {
+    width: 100%;
+}
